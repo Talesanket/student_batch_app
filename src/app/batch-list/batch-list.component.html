@@ -1,0 +1,6 @@
+<h2>Batch List</h2>
+<ul>
+  <li *ngFor="let batch of batches">
+    <a (click)="viewBatch(batch.id)">{{ batch.name }}</a>
+  </li>
+</ul>
