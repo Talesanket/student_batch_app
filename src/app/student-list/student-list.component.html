@@ -1,6 +1,18 @@
 <h2>Student List</h2>
-<ul>
-  <li *ngFor="let student of students">
-    <a (click)="viewStudent(student.id)">{{ student.name }}</a> - Batch: {{ student.batchNumber }}
-  </li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Batch Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td><a [routerLink]="['/student', student.id]">{{ student.name }}</a></td>
+      <td>{{ student.batchNumber }}</td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/home" class="back-link">Back to Home</a>
